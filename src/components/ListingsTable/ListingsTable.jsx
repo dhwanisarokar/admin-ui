@@ -55,8 +55,8 @@ export default function ListingsTable({
         </tbody>
       </table>
       {!users.length ? (
-        <div style={{ textAlign: "center", margin: "30px" }}>
-          No User Found 😞
+        <div style={{ textAlign: "center", margin: "30px", fontWeight: "500" }}>
+          No User Found ☹️
         </div>
       ) : null}
     </div>
