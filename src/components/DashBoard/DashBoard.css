@@ -1,0 +1,15 @@
+.delete-btn {
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: white;
+  margin: 12px;
+  padding: 4px 8px;
+  background: rgb(252 92 92);
+  border: none;
+  border-radius: 14px;
+  transition: 0.15s;
+}
+
+.delete-btn:disabled {
+  background: rgba(252, 92, 92, 0.8);
+}

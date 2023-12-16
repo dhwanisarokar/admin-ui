@@ -3,6 +3,7 @@ import SearchBar from "../Search/SearchBar";
 import { fetchUsersData } from "../../api/api";
 import ListingsTable from "../ListingsTable/ListingsTable";
 import Pagination from "../Pagination/Pagination";
+import "./DashBoard.css";
 
 export default function DashBoard() {
   // STATES:
@@ -69,19 +70,18 @@ export default function DashBoard() {
     const updatedData = users.filter((user) => user.id !== id);
 
     setUsers(updatedData);
+    setIsSelectedAll(false);
   }
 
-  function handleDeleteAllSelected(selectedRows) {
-    if (selectedRows.length === 0) return;
-
-    const updatedUsers = users.filter(({ id }) => !selectedRows.includes(id));
-
+  // delete row which are selected
+  const handleDeleteSelected = () => {
+    console.log("updatedUsers");
+    const updatedUsers = users.filter(
+      (user) => !selectedRows.includes(user.id)
+    );
     setUsers(updatedUsers);
-
-    // Update the total numner of pages and current Page
-    const updatedTotalPages = Math.ceil(updatedUsers.length / ITEMS_PER_PAGE);
-    if (currentPage > updatedTotalPages) setCurrentPage(updatedTotalPages);
-  }
+    setIsSelectedAll(false);
+  };
 
   function handlePageChange(pageNo) {
     setCurrentPage(pageNo);
@@ -128,7 +128,8 @@ export default function DashBoard() {
         <div className="footer" style={{ position: "relative" }}>
           <button
             className="delete-btn"
-            onClick={() => handleDeleteAllSelected(selectedRows)}
+            onClick={handleDeleteSelected}
+            disabled={!selectedRows.length}
           >
             Delete Selected
           </button>

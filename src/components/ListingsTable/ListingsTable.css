@@ -47,17 +47,6 @@
   color: red;
 }
 
-.delete-btn {
-  font-family: inherit;
-  font-size: 1.05rem;
-  color: white;
-  margin: 12px;
-  padding: 4px 8px;
-  background: rgb(252 92 92);
-  border: none;
-  border-radius: 14px;
-}
-
 @media screen and (max-width: 660px) {
   .table-content th,
   .table-content td {
