@@ -1,0 +1,39 @@
+.pagination-container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#active {
+  border: 1px solid var(--color-primary);
+  background: none;
+  color: var(--color-primary);
+}
+
+.page-numbers {
+  padding: 0 !important;
+}
+
+.pagination-container button {
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+}
+.pagination-container button:disabled {
+  background: #00987a60;
+}
+
+@media screen and (max-width: 660px) {
+  .pagination-container {
+    position: relative;
+    transform: unset;
+  }
+}

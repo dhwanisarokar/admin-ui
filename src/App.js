@@ -1,7 +1,11 @@
-import logo from "./logo.svg";
+import DashBoard from "./components/DashBoard/DashBoard";
 
 function App() {
-  return <div className="App">admin ui</div>;
+  return (
+    <div className="App">
+      <DashBoard />
+    </div>
+  );
 }
 
 export default App;

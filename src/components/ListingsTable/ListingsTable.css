@@ -1,0 +1,66 @@
+.table-container {
+  margin: 0 14px;
+  overflow-x: auto;
+  border-radius: 4px 4px 0 0;
+}
+
+.table-content {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 900px;
+}
+
+.table-content input {
+  width: 15px;
+  height: 15px;
+}
+
+.table-content thead tr {
+  background: #009879;
+  color: white;
+}
+
+.table-content th,
+.table-content td {
+  padding: 11px 14px;
+}
+
+.table-content tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.table-content tbody tr:hover {
+  background: #ececec;
+}
+
+.table-content tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.action-btn {
+  font-size: 1.2rem;
+}
+.action-btn .delete-icon {
+  margin-left: 8px;
+
+  color: red;
+}
+
+.delete-btn {
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: white;
+  margin: 12px;
+  padding: 4px 8px;
+  background: rgb(252 92 92);
+  border: none;
+  border-radius: 14px;
+}
+
+@media screen and (max-width: 660px) {
+  .table-content th,
+  .table-content td {
+    padding: 8px 12px;
+  }
+}
