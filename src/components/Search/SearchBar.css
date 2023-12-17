@@ -27,4 +27,5 @@
   font-weight: bolder;
   color: var(--color-primary);
   margin-right: 10px;
+  cursor: pointer;
 }
