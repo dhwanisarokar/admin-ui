@@ -57,7 +57,12 @@ export default function ListingsTable({
 
         <tbody>
           {users.map((user) => (
-            <tr key={user.id}>
+            <tr
+              key={user.id}
+              className={`${
+                selectedRows.includes(user.id) ? "active-row" : null
+              }`}
+            >
               <td>
                 <input
                   type="checkbox"

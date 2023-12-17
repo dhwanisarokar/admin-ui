@@ -4,6 +4,10 @@
   border-radius: 4px 4px 0 0;
 }
 
+.active-row {
+  background: var(--color-gray);
+}
+
 .table-content {
   width: 100%;
   border-collapse: collapse;
@@ -49,19 +53,15 @@
 }
 
 .table-content input[type="text"] {
+  width: 80%;
   font-family: inherit;
+  background: white;
   border: 2px solid var(--color-primary);
   font-size: 0.95rem;
   border-radius: 2px;
-  padding: 0px 2px;
+  padding: 0px 3px;
 }
 
-@media screen and (max-width: 660px) {
-  .table-content th,
-  .table-content td {
-    padding: 8px 12px;
-  }
-}
 .edit-button {
   display: flex;
   align-items: center;
@@ -85,4 +85,11 @@
   border: 1px solid rgb(254, 49, 49);
   background: transparent;
   color: rgb(254, 49, 49);
+}
+
+@media screen and (max-width: 660px) {
+  .table-content th,
+  .table-content td {
+    padding: 8px 12px;
+  }
 }
