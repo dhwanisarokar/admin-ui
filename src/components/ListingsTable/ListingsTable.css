@@ -46,9 +46,14 @@
 .action-btn {
   font-size: 1.2rem;
 }
+
+.action-btn .delete-icon,
+.action-btn .edit-icon {
+  cursor: pointer;
+}
+
 .action-btn .delete-icon {
   margin-left: 8px;
-
   color: red;
 }
 

@@ -44,6 +44,7 @@ export default function ListingsTable({
             <th width="10%">
               <input
                 type="checkbox"
+                name="selectALl"
                 onChange={toggleSelectAll}
                 checked={isSelectAll}
               />
@@ -66,6 +67,7 @@ export default function ListingsTable({
               <td>
                 <input
                   type="checkbox"
+                  name="select"
                   onChange={(e) => handleToggleSelect(e, user.id)}
                   checked={selectedRows.includes(user.id)}
                 />

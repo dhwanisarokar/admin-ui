@@ -7,6 +7,7 @@ export default function SearchBar({ value, onSearch }) {
     <div className="search-bar">
       <input
         className="search-field"
+        name="search"
         onChange={onSearch}
         type="text"
         value={value}
