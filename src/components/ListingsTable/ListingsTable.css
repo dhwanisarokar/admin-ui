@@ -11,7 +11,7 @@
   min-width: 900px;
 }
 
-.table-content input {
+.table-content input[type="checkbox"] {
   width: 15px;
   height: 15px;
 }
@@ -48,9 +48,41 @@
   color: red;
 }
 
+.table-content input[type="text"] {
+  font-family: inherit;
+  border: 2px solid var(--color-primary);
+  font-size: 0.95rem;
+  border-radius: 2px;
+  padding: 0px 2px;
+}
+
 @media screen and (max-width: 660px) {
   .table-content th,
   .table-content td {
     padding: 8px 12px;
   }
+}
+.edit-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.save-button {
+  font-family: inherit;
+  width: 40%;
+  border-radius: 4px;
+  padding: 3px 4px;
+  border: none;
+  background: var(--color-primary);
+  color: white;
+}
+
+.cancel-button {
+  font-family: inherit;
+  width: 40%;
+  border-radius: 4px;
+  padding: 3px 4px;
+  border: 1px solid rgb(254, 49, 49);
+  background: transparent;
+  color: rgb(254, 49, 49);
 }

@@ -13,6 +13,7 @@ export default function DashBoard() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRows, setSelectedRows] = useState([]);
   const [isSelectAll, setIsSelectedAll] = useState(false);
+
   const ITEMS_PER_PAGE = 10;
 
   // LOGICS:
@@ -26,20 +27,36 @@ export default function DashBoard() {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentPageUsers = filteredUsers.slice(startIndex, startIndex + 10);
 
+  // Search functionality
   function handleSearch() {
-    const filteredData = users.filter(
-      (user) =>
-        user.email.toLowerCase().startsWith(searchValue.toLowerCase()) ||
-        user.name.toLowerCase().startsWith(searchValue.toLowerCase()) ||
-        user.role.toLowerCase().startsWith(searchValue.toLowerCase())
-      // here we use startsWith instead of includes as name sujects.
-    );
+    if (searchValue !== "") {
+      const filteredData = users.filter(
+        (user) =>
+          user.email.toLowerCase().startsWith(searchValue.toLowerCase()) ||
+          user.name.toLowerCase().startsWith(searchValue.toLowerCase()) ||
+          user.role.toLowerCase().startsWith(searchValue.toLowerCase())
+      );
 
-    setFilteredUsers(filteredData);
+      setFilteredUsers(filteredData);
+      setCurrentPage(1);
+    } else {
+      setFilteredUsers(users);
+    }
+  }
+
+  // handle Edited user
+  function handleOnSave(editedUser, id) {
+    const updatedUser = [...users];
+    const indexOfEditedUser = updatedUser.findIndex((user) => user.id === id);
+
+    if (indexOfEditedUser !== -1) {
+      updatedUser[indexOfEditedUser] = editedUser;
+      setUsers(updatedUser);
+    }
   }
 
   // handle select for all for rows
-  const toggleSelectAll = (e) => {
+  const toggleSelectAll = () => {
     if (isSelectAll) {
       setSelectedRows([]);
     } else {
@@ -129,6 +146,7 @@ export default function DashBoard() {
         handleToggleSelect={handleToggleSelect}
         isSelectAll={isSelectAll}
         selectedRows={selectedRows}
+        onSave={handleOnSave}
       />
 
       {/* Footer */}
