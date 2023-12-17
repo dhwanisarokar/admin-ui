@@ -19,6 +19,7 @@
 .table-content thead tr {
   background: #009879;
   color: white;
+  text-transform: uppercase;
 }
 
 .table-content th,

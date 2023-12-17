@@ -8,6 +8,8 @@
   border: none;
   border-radius: 14px;
   transition: 0.15s;
+  z-index: 1;
+  position: relative;
 }
 
 .delete-btn:disabled {

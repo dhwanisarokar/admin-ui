@@ -71,16 +71,24 @@ export default function DashBoard() {
 
     setUsers(updatedData);
     setIsSelectedAll(false);
+
+    // Update the total number of pages and current page
+    const updatedTotalPages = Math.ceil(updatedData.length / ITEMS_PER_PAGE);
+    if (currentPage > updatedTotalPages) setCurrentPage(updatedTotalPages);
   }
 
   // delete row which are selected
   const handleDeleteSelected = () => {
-    console.log("updatedUsers");
     const updatedUsers = users.filter(
       (user) => !selectedRows.includes(user.id)
     );
     setUsers(updatedUsers);
+    setSelectedRows([]);
     setIsSelectedAll(false);
+
+    // Update the total number of pages and current page
+    const updatedTotalPages = Math.ceil(updatedUsers.length / ITEMS_PER_PAGE);
+    if (currentPage > updatedTotalPages) setCurrentPage(updatedTotalPages);
   };
 
   function handlePageChange(pageNo) {
